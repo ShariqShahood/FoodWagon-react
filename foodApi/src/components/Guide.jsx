@@ -6,7 +6,7 @@ const Guide = () => {
         <center>
             <div className="container2 my-5">
                 <h2 className='heading3D'>How does it work</h2><br /><br />
-                <div className="row my-5">
+                <div className="row my-5 animate__animated animate__backInLeft">
                     <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                         <div className="myCard">
                             <div className="innerCard">

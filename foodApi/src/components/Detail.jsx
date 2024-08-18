@@ -53,7 +53,7 @@ const Cards = () => {
         <div className="row">
           {recipes.map((recipe) => (
 <center>
-    <div className='detailCard'>
+    <div className='detailCard animate__animated animate__fadeInLeft'>
   <div className="row g-0 my-5">
     <div className="col-md-4">
       <img src={recipe.image} className="img-fluid rounded-start" style={{borderRadius: '20px'}}/>
@@ -65,7 +65,7 @@ const Cards = () => {
         {recipe.ingredients}<br/><br />
         <p className="card-text" style={{backgroundColor:'rgb(255, 187, 0)',borderRadius:'5px',fontFamily:'cursive'}}><b>Instructions</b></p>
         {recipe.instructions}<br/><br/><hr />
-        <ol className="star-list d-flex gap-4" style={{fontWeight: 'bold', backgroundColor:'lightgray'}}>
+        <ol className="star-list gap-4 mx-2 " style={{fontWeight: 'bold',borderRadius:'5px', backgroundColor:'lightgray', textAlign:'left'}}>
             <li>Prepration Time : {recipe.prepTimeMinutes}min</li>
             <li>Cook Time : {recipe.cookTimeMinutes}min</li>
             <li>Serving : {recipe.servings} Person</li>

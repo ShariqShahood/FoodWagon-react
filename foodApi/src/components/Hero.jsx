@@ -8,12 +8,12 @@ const Hero = () => {
     <div className='hero-background'>
     <div className="container overflow-hidden text-center">
   <div className="row gx-5">
-    <div className="col">
+    <div className="col animate__animated animate__backInLeft">
      <div className="p-5" id='heroheading'>Are You Straving?</div>
      <p id='heroPara'>Within a few clicks, find meals that are accesible near you</p>
     </div>
     <div className="col">
-      <div className="p-5"><img src={heroImg} alt="" /></div>
+      <div className="p-5 animate__animated animate__backInDown"><img src={heroImg} alt="" /></div>
     </div>
   </div>
 </div>

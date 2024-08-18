@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import RatingStars from 'react-rating-stars-component'; 
+import { useNavigate } from 'react-router-dom'; // Add this import
 import Guide from './Guide';
 import im1  from '../assets/img1.png'
 import im2  from '../assets/img2.png'
@@ -37,6 +38,7 @@ const Cards = () => {
   const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 9;
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -75,13 +77,19 @@ const Cards = () => {
   </center>;
   if (error) return <p>Error: {error}</p>;
 
+
+
+  const handleDetailClick = (id) => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <>
       <div className="container">
         <h1 className="heading3D text-center my-5">Recipe List</h1>
         <div className="row">
           {recipes.map((recipe) => (
-            <div className="col-md-4 mb-4" key={recipe.id}>
+            <div className="col-md-4 mb-4  animate__animated animate__zoomInDown" key={recipe.id}>
               <div className="card my-5">
                 <div className="container-image">
                   <img src={recipe.image} alt="" style={{ width: '100%', borderRadius: '20px' }} />
@@ -98,7 +106,7 @@ const Cards = () => {
                       isHalf
                       edit={false} 
                     />
-                    <button id='cBtn'>Detail</button>
+                    <button id='cBtn' onClick={() => handleDetailClick(recipe.id)}>Detail</button> 
                   </div>
                   <div className="product-image">
                     <div className="box-image">
